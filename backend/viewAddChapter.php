@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8"/>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
-        <script>tinymce.init({ selector:'textarea' });</script>
+        <script>
+        tinymce.init({ selector:'textarea' });</script>
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
             <link href="../../public/css/style.css" rel="stylesheet" /> 
             <link href="../../public/css/styleBackend.css" rel="stylesheet" /> 
@@ -19,10 +21,10 @@
                   <label> Le titre du chapitre: <br>
                   	<input type="text" rows="2" cols="2" name="tempChapterTitle" value=""><br><br>
                   </label>
-                        <div class="form-group">
+                        
                           <label> Le contenu du chapitre: <br></label>
-                          <textarea class="form-control" rows="25" id="comment" name="tempChapterContent"></textarea>
-                        </div>
+                          <textarea rows="25"  name="tempChapterContent"></textarea>
+                      
                        <input  type="submit" value="Publier" style="display: inline-block;padding: 15px 25px;font-size: 24px;cursor: pointer;text-align: center;text-decoration: none;outline: none;color: #fff;background-color:green;border: none;border-radius: 15px;box-shadow: 0 9px #999;" />     
                 </div>
               </form><br><br> 
