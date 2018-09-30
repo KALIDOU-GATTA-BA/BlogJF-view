@@ -18,8 +18,8 @@ $title = secureForm($post['title']); ?>
 </div>
 <h2>Commentaires</h2>
 <div class="container">
-    <div class="col-md-12 col-xs-4 col-lg-4">
-        <div class="row">
+    <div class="col-md-4 col-xs-12 col-lg-8">
+        
                         <form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post">
                                     <div>
                                             <label for="author">Auteur</label><br />
@@ -33,9 +33,7 @@ $title = secureForm($post['title']); ?>
                                                 <input type="submit" value="Envoyer"/>
                                             </div>
                         </form>
-        </div>
-    </div>  
-</div>
+       
 <?php  
 while ($comment = $comments->fetch())
 {
@@ -54,7 +52,9 @@ while ($comment = $comments->fetch())
     </div>
 <?php
 } 
-?>
+?>  
+    </div>  
+</div>
 <?php $content = ob_get_clean();?>
 <?php require('template.php');
 require('footer.php');?>
