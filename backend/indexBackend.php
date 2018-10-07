@@ -59,7 +59,13 @@
 				<em><strong>GESTION DES COMMENTAIRES</strong></em>
 			</diV><br><br>
 			<div class="notReadCommentManager">
-				COMMENTAIRES NON LUS
+				<?php                                                     
+                		$db = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', 'root');
+                		$posts= $db->query('SELECT COUNT(notReadComment) as fetchComment from comments where notReadComment = 1'); 
+                		$req=$posts->fetch();
+                		$req= $req['fetchComment'];
+                		?>
+				COMMENTAIRES NON LUS (<?= $req ?>)
 			</diV><br><br><br>	
 			<table class="table table-dark table-hover">
 				<thead>
@@ -89,7 +95,13 @@
 	                     ?> 
 			</table>
 			<div class="reportedCommentManager">
-				COMMENTAIRES SIGNALES
+						<?php                                                     
+                		$db = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', 'root');
+                		$posts= $db->query('SELECT COUNT(reported) as reportedComment from comments where reported = 1'); 
+                		$req=$posts->fetch();
+                		$req= $req['reportedComment'];
+                		?>
+				COMMENTAIRES SIGNALES (<?= $req ?>)
 			</diV><br><br><br>
 			<table class="table table-dark table-hover">
 				<thead>
