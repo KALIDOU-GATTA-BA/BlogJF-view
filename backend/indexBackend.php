@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="utf-8">
@@ -13,7 +13,7 @@
 	<div class="row">
 		<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12 col-xl-12">
 			<header>
-				<img src="../../public/images/alaskaBack.jpg" class="rounded" alt="Frog"/>
+				<img src="../../public/images/ALZ.jpg" class="rounded" alt="Frog"/>
 			</header>
 		</div>
 	</div>
@@ -22,7 +22,8 @@
 <div class="container">
 	<div class="row">
 		<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12 col-xl-12">
-			<a href="../../controller/mainForLogin.php?deconnexion=true"><strong><span class="dec">Deconnexion</span></strong></a><br><br><br>
+			<a href="../../controller/mainForLogin.php?deconnexion=true"><strong><span class="dec">Deconnexion</span></strong></a><br>
+                        <a href="http://kalidougattaba.fr"><strong>Accueil</strong></a><br><br><br>
 			<div class="chapterManager">
 				<em><strong>GESTION DES CHAPITRES</strong></em>
 			</diV>
@@ -37,19 +38,19 @@
 					  </tr>
 				</thead>
 					  	<?php                                                     
-                		$db = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', 'root');
+                		$db = new PDO('mysql:host=yunnantohcblog.mysql.db;dbname=yunnantohcblog;charset=utf8', 'yunnantohcblog', '29111991Kgb');
                 		$posts= $db->query('SELECT title, id, countComment from posts');
                 		while ($data = $posts->fetch()){ 
                 		?>
                 		<tbody>
-						  	<tr>
-						  	<td style="color:blue;"><?= htmlspecialchars($data['title']) ?></td>
-							<td style="text-align:left;"><?php  echo $data['countComment']; ?></td>
-							<td style="text-align:center;"><a href="../../index.php?action=update&amp;id=<?= $data['id'] ?>"><span class="glyphicon glyphicon-pencil" style="text-align:center;"></span></a></td>
-							<td style="text-align:right;"><a href="../../index.php?action=delete&amp;id=<?= $data['id'] ?>" onclick="return(confirm('Etes-vous sûr de vouloir supprimer ce chapitre?'));" ><span class="glyphicon glyphicon-trash"></span></a></td>
-							</tr>
-						</tbody>
-						<?php
+				    <tr>
+				       <td style="color:blue;"><?= htmlspecialchars($data['title']) ?></td>
+				       <td style="text-align:left;"><?php  echo $data['countComment']; ?></td>
+					<td style="text-align:center;"><a href="../../index.php?action=update&amp;id=<?= $data['id'] ?>"><span class="glyphicon glyphicon-pencil" style="text-align:center;"></span></a></td>
+					<td style="text-align:right;"><a href="../../index.php?action=delete&amp;id=<?= $data['id'] ?>" onclick="return(confirm('Etes-vous sûr de vouloir supprimer ce chapitre?'));" ><span class="glyphicon glyphicon-trash"></span></a></td>
+				    </tr>
+				</tbody>
+			<?php
                     	}
                     	$posts->closeCursor();
                     	?>	  
@@ -60,7 +61,7 @@
 			</diV><br><br>
 			<div class="notReadCommentManager">
 				<?php                                                     
-                		$db = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', 'root');
+                		$db = new PDO('mysql:host=yunnantohcblog.mysql.db;dbname=yunnantohcblog;charset=utf8', 'yunnantohcblog', '29111991Kgb');
                 		$posts= $db->query('SELECT COUNT(notReadComment) as fetchComment from comments where notReadComment = 1'); 
                 		$req=$posts->fetch();
                 		$req= $req['fetchComment'];
@@ -76,7 +77,7 @@
 					  </tr>
 				</thead> 
 					   	<?php                                                     
-                        $db = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', 'root');
+                        $db = new PDO('mysql:host=yunnantohcblog.mysql.db;dbname=yunnantohcblog;charset=utf8', 'yunnantohcblog', '29111991Kgb');
                         $notRead= $db->query('SELECT SUBSTRING(comment, 1,20) AS cmt, post_id, id, comment_date from comments where notReadComment=1');
                         while ($notReadComment = $notRead->fetch()){ 
                         $postId=$notReadComment['post_id'];
@@ -96,7 +97,7 @@
 			</table>
 			<div class="reportedCommentManager">
 						<?php                                                     
-                		$db = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', 'root');
+                		$db = new PDO('mysql:host=yunnantohcblog.mysql.db;dbname=yunnantohcblog;charset=utf8', 'yunnantohcblog', '29111991Kgb');
                 		$posts= $db->query('SELECT COUNT(reported) as reportedComment from comments where reported = 1'); 
                 		$req=$posts->fetch();
                 		$req= $req['reportedComment'];
@@ -112,7 +113,7 @@
 					  </tr>
 				</thead>
 					<?php                                                     
-	                $db = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', 'root');
+	                $db = new PDO('mysql:host=yunnantohcblog.mysql.db;dbname=yunnantohcblog;charset=utf8', 'yunnantohcblog', '29111991Kgb');
 	                $reported= $db->query('SELECT author, id, post_id, SUBSTRING(comment, 1,20) AS cmt from comments where reported=1');
 	                while ($report = $reported->fetch()){?>    	
 				<tbody>
