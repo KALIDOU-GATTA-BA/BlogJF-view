@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
         <head>
                 <meta charset="utf-8" />
                 <link href="bootstrap.min.css" rel="stylesheet" />
@@ -9,16 +9,6 @@
         </head>
         <body>
                 <div class="updateChapter"> Le chapitre a bien été mis à jour !</div><i style="font-size:254px" class="fa">&#xf118;</i><br/>
-
         	<p><a href="../view/backend/indexBackend.php"><i style="font-size:254px" class="fa">&#xf112;</i></a></p>
-
-        	<header>
-        	</header>
         </body>
-<footer>
-        <?php require_once("footerBackend.php");?>
-    </footer>
 </html>
-<?php
-
-?>
