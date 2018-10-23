@@ -12,9 +12,7 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12 col-xl-12">
-			<header>
-				<img src="../../public/images/ALZ.jpg" class="rounded" alt="Frog"/>
-			</header>
+ 
 		</div>
 	</div>
 </div><br>
@@ -44,8 +42,8 @@
                 		?>
                 		<tbody>
 				    <tr>
-				       <td style="color:blue;"><?= htmlspecialchars($data['title']) ?></td>
-				       <td style="text-align:left;"><?php  echo $data['countComment']; ?></td>
+				       <td style="color:blue;"><strong><?= htmlspecialchars($data['title']) ?></strong></td>
+				       <td style="text-align:left;"><strong><?php  echo $data['countComment']; ?></strong></td>
 					<td style="text-align:center;"><a href="../../index.php?action=update&amp;id=<?= $data['id'] ?>"><span class="glyphicon glyphicon-pencil" style="text-align:center;"></span></a></td>
 					<td style="text-align:right;"><a href="../../index.php?action=delete&amp;id=<?= $data['id'] ?>" onclick="return(confirm('Etes-vous sûr de vouloir supprimer ce chapitre?'));" ><span class="glyphicon glyphicon-trash"></span></a></td>
 				    </tr>
@@ -66,7 +64,7 @@
                 		$req=$posts->fetch();
                 		$req= $req['fetchComment'];
                 		?>
-				COMMENTAIRES NON LUS (<?= $req ?>)
+				<strong>COMMENTAIRES NON LUS</strong> (<?= $req ?>)
 			</diV><br><br><br>	
 			<table class="table table-dark table-hover">
 				<thead>
@@ -102,7 +100,7 @@
                 		$req=$posts->fetch();
                 		$req= $req['reportedComment'];
                 		?>
-				COMMENTAIRES SIGNALES (<?= $req ?>)
+				<strong>COMMENTAIRES SIGNALES</strong> (<?= $req ?>)
 			</diV><br><br><br>
 			<table class="table table-dark table-hover">
 				<thead>
@@ -130,9 +128,6 @@
 			</table>
 		</div>
 	</div>
-</div>
-</body><br><br><br><br>
-    <footer>
-        <?php require_once("footerBackend.php");?>
-    </footer>
+</div>    
+</body>
 </html> 
