@@ -36,7 +36,7 @@
 					  </tr>
 				</thead>
 					  	<?php                                                     
-                		$db = new PDO('mysql:host=yunnantohcblog.mysql.db;dbname=yunnantohcblog;charset=utf8', 'yunnantohcblog', '29111991Kgb');
+                		$db = new PDO('...');
                 		$posts= $db->query('SELECT title, id, countComment from posts');
                 		while ($data = $posts->fetch()){ 
                 		?>
@@ -59,7 +59,7 @@
 			</diV><br><br>
 			<div class="notReadCommentManager">
 				<?php                                                     
-                		$db = new PDO('mysql:host=yunnantohcblog.mysql.db;dbname=yunnantohcblog;charset=utf8', 'yunnantohcblog', '29111991Kgb');
+                		$db = new PDO('...');
                 		$posts= $db->query('SELECT COUNT(notReadComment) as fetchComment from comments where notReadComment = 1'); 
                 		$req=$posts->fetch();
                 		$req= $req['fetchComment'];
@@ -75,7 +75,7 @@
 					  </tr>
 				</thead> 
 					   	<?php                                                     
-                        $db = new PDO('mysql:host=yunnantohcblog.mysql.db;dbname=yunnantohcblog;charset=utf8', 'yunnantohcblog', '29111991Kgb');
+                        $db = new PDO('...);
                         $notRead= $db->query('SELECT SUBSTRING(comment, 1,20) AS cmt, post_id, id, comment_date from comments where notReadComment=1');
                         while ($notReadComment = $notRead->fetch()){ 
                         $postId=$notReadComment['post_id'];
@@ -95,7 +95,7 @@
 			</table>
 			<div class="reportedCommentManager">
 						<?php                                                     
-                		$db = new PDO('mysql:host=yunnantohcblog.mysql.db;dbname=yunnantohcblog;charset=utf8', 'yunnantohcblog', '29111991Kgb');
+                		$db = new PDO('...');
                 		$posts= $db->query('SELECT COUNT(reported) as reportedComment from comments where reported = 1'); 
                 		$req=$posts->fetch();
                 		$req= $req['reportedComment'];
@@ -111,7 +111,7 @@
 					  </tr>
 				</thead>
 					<?php                                                     
-	                $db = new PDO('mysql:host=yunnantohcblog.mysql.db;dbname=yunnantohcblog;charset=utf8', 'yunnantohcblog', '29111991Kgb');
+	                $db = new PDO('...');
 	                $reported= $db->query('SELECT author, id, post_id, SUBSTRING(comment, 1,20) AS cmt from comments where reported=1');
 	                while ($report = $reported->fetch()){?>    	
 				<tbody>
